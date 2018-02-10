@@ -1,0 +1,3 @@
+/Users/cff/Desktop/PROGRAM/SwordOffer_mac/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/cff/Desktop/PROGRAM/SwordOffer_mac/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cff/Desktop/PROGRAM/SwordOffer_mac/cmake-build-debug/CMakeFiles/SwordOffer_mac.dir
