@@ -21,7 +21,7 @@ using namespace std;
 如果p1上的值不是空格，则复制到p2位置上；如果是空格，则p2及前两位插入"%20"。
 p1和p2不断向前移，直到p1和p2重合。
 --------------------------------------------------------------***/
-//
+
 class solution5 {
 public:
 	void replaceSpace(char *str, int length) {
@@ -37,6 +37,9 @@ public:
 		int new_length = length + num_space * 2;
 		int p1 = length;  //新数组
 		int p2 = new_length;
+
+
+        str[p2] = '1';
 		while (p1 < p2) {
 			if (str[p1] != ' ') {
 				str[p2] = str[p1];
@@ -49,40 +52,44 @@ public:
 			p1--;
 			p2--;
 		}
-		//cout << str << endl; //test
+
 	}
+
+    void Test(char* str, int length){
+        replaceSpace(str, length);
+		cout << "My answer:\n"<<str << endl<<endl; //test
+    }
 
 	void test1() {
 		cout << "Test1:" << endl;
 		char str[] = "i am chinese!";
 		int length = 14;
-		replaceSpace(str, length);
-		cout << "Correct Answer:\ni%20am%20chinese!\n\n";
-		
+		cout << "Correct Answer:\ni%20am%20chinese!\n";
+		Test(str, length);
 	}
 
 	void test2() {
 		cout << "Test2:" << endl;
 		char str[] = " ";
 		int length = 2;
-		replaceSpace(str, length);
-		cout << "Correct Answer:\n%20\n\n";
+		cout << "Correct Answer:\n%20\n";
+		Test(str, length);
 	}
 
 	void test3() {
 		cout << "Test3:" << endl;
 		char str[] = "wow    ";
 		int length = 8;
-		replaceSpace(str, length);
-		cout << "Correct Answer:\nwow%20%20%20%20\n\n";
+		cout << "Correct Answer:\nwow%20%20%20%20\n";
+		Test(str, length);
 	}
 
 	void test4() {
 		cout << "Test4:" << endl;
 		char str[] = "";
 		int length = 1;
-		replaceSpace(str, length);
-		cout << "Correct Answer:空字符串\n\n";
+		cout << "Correct Answer:空字符串\n";
+		Test(str, length);
 	}
 
 	void run() {
