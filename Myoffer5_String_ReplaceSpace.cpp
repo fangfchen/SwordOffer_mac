@@ -11,7 +11,7 @@ using namespace std;
 
 // 参数:
 //         str:     字符串
-//         length:  字符串长度(书上与此略有差异，书上指的是可用的总容量)
+//         length:  字符串可用的总容量
 // 返回值: 无             
 
 /***--------------------------------------------------------------
@@ -20,6 +20,7 @@ using namespace std;
 接下来从后往前来复制、替换字符串。准备两个指针p1和p2，p1指向原字符串的末尾，p2指向替换后字符串的末尾（事实上都在一个字符串中）。
 如果p1上的值不是空格，则复制到p2位置上；如果是空格，则p2及前两位插入"%20"。
 p1和p2不断向前移，直到p1和p2重合。
+注：需要判断新长度是否<字符串总容量！
 --------------------------------------------------------------***/
 
 class solution5 {
@@ -31,15 +32,18 @@ public:
 		//printf("%s\n", str);
 		//puts(str);  //自带回车
 		int num_space=0;
-		for (int i = 0; i < length; i++) {
-			if (str[i] == ' ') num_space++;  //注：单引号是字符，双引号是字符串
-		}
-		int new_length = length + num_space * 2;
-		int p1 = length;  //新数组
-		int p2 = new_length;
+        int i = 0;
+        while(str[i]!='\0'){  //统计字符串长度和空格个数
+            if (str[i] == ' ') num_space++; //注：单引号是字符，双引号是字符串
+            i++;
+        }
+        int strlen = i;
 
+        int new_length = strlen + num_space * 2;
+        if (new_length > length) return;  //如果新长度>总容量，则返回
 
-        str[p2] = '1';
+        int p1 = strlen;      //原长度末尾
+		int p2 = new_length;  //新长度末尾
 		while (p1 < p2) {
 			if (str[p1] != ' ') {
 				str[p2] = str[p1];
@@ -55,48 +59,61 @@ public:
 
 	}
 
+    //============================test===============================
     void Test(char* str, int length){
         replaceSpace(str, length);
 		cout << "My answer:\n"<<str << endl<<endl; //test
     }
-
+    //空格在中间
 	void test1() {
 		cout << "Test1:" << endl;
-		char str[] = "i am chinese!";
-		int length = 14;
+		char str[100] = "i am chinese!";
+		int length = 100;
 		cout << "Correct Answer:\ni%20am%20chinese!\n";
 		Test(str, length);
 	}
-
+    //只有一个空格
 	void test2() {
 		cout << "Test2:" << endl;
-		char str[] = " ";
-		int length = 2;
+		char str[100] = " ";
+		int length = 100;
+        cout << "Original string:\n"<<str<<endl;
 		cout << "Correct Answer:\n%20\n";
 		Test(str, length);
 	}
-
+    //空格在末尾
 	void test3() {
 		cout << "Test3:" << endl;
-		char str[] = "wow    ";
-		int length = 8;
+		char str[100] = "wow    ";
+		int length = 100;
+        cout << "Original string:\n"<<str<<endl;
 		cout << "Correct Answer:\nwow%20%20%20%20\n";
 		Test(str, length);
 	}
-
+    //空字符串
 	void test4() {
 		cout << "Test4:" << endl;
-		char str[] = "";
-		int length = 1;
-		cout << "Correct Answer:空字符串\n";
+		char str[100] = "";
+		int length = 100;
+        cout << "Original string:\n"<<str<<endl;
+		cout << "Correct Answer:\n空字符串\n";
 		Test(str, length);
 	}
-
+    //容量不足
+    void test5() {
+        cout << "Test5:" << endl;
+        char str[6] = "1 2 3";
+        int length = 6;
+        cout << "Original string:\n"<<str<<endl;
+        cout << "Correct Answer:\n1 2 3\n";
+        Test(str, length);
+    }
 	void run() {
 		test1();
 		test2();
 		test3();
 		test4();
+        test5();
 	}
 };
 
