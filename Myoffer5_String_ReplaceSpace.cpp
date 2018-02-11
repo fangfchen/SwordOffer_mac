@@ -116,8 +116,8 @@ public:
         test5();
 	}
 };
-
-int main() {
-	solution5 s;
-	s.run();
-}
+//
+//int main() {
+//	solution5 s;
+//	s.run();
+//}

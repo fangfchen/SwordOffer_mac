@@ -17,15 +17,15 @@ void PrintTreeNode(TreeNode* pNode) {
 		if (pNode->left != nullptr)
 			cout << ", Left: " << pNode->left->val;
 		else
-			cout << ", Left: nullptr";
+			cout << ", Left: null";
 		//right
-		if (pNode->left != nullptr)
+		if (pNode->right != nullptr)
 			cout << ", Right: " << pNode->right->val;
 		else
-			cout << ", Right: nullptr";
+			cout << ", Right: null";
 	}
 	else
-		cout << "Nullptr Node!";
+		cout << "Null Node!";
 	cout << endl;
 }
 
