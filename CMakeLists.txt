@@ -11,13 +11,14 @@ set(SOURCE_FILES List.cpp List.h
         Myoffer5_String_ReplaceSpace.cpp
         Myoffer6_List_PrintListInReversedOrder.cpp
         Myoffer7_Tree_ConstructBinaryTree.cpp
+        Myoffer8_Tree_NextNodeInBinaryTrees.cpp
         Myoffer18_02_List_DeleteDuplicatedNode.cpp
         Myoffer22_List_KthNodeFromEnd.cpp
         Myoffer23_List_EntryNodeInListLoop.cpp
         Myoffer24_List_ReverseList.cpp
         Myoffer25_List_MergeSortedLists.cpp
         Myoffer35_List_CopyComplexList.cpp
-        Myoffer52_List_FirstCommonNodesInLists.cpp)
+        Myoffer52_List_FirstCommonNodesInLists.cpp Myoffer8_Tree_NextNodeInBinaryTrees.cpp)
 
 add_executable(SwordOffer_mac ${SOURCE_FILES}
         List.cpp List.h
@@ -28,6 +29,7 @@ add_executable(SwordOffer_mac ${SOURCE_FILES}
         Myoffer5_String_ReplaceSpace.cpp
         Myoffer6_List_PrintListInReversedOrder.cpp
         Myoffer7_Tree_ConstructBinaryTree.cpp
+        Myoffer8_Tree_NextNodeInBinaryTrees.cpp
         Myoffer18_02_List_DeleteDuplicatedNode.cpp
         Myoffer22_List_KthNodeFromEnd.cpp
         Myoffer23_List_EntryNodeInListLoop.cpp
