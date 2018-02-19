@@ -116,8 +116,8 @@ public:
 };
 
 //int main() {
-//	Solution6 s;
-//	s.run();
+//    Solution6 s;
+//    s.run();
 //}
 
 

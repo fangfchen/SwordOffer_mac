@@ -137,6 +137,9 @@
 		<Unit filename="/Users/cff/Desktop/PROGRAM/SwordOffer_mac/Myoffer8_Tree_NextNodeInBinaryTrees.cpp">
 			<Option target="SwordOffer_mac"/>
 		</Unit>
+		<Unit filename="/Users/cff/Desktop/PROGRAM/SwordOffer_mac/Myoffer9_queue_QueueWithTwoStacks.cpp">
+			<Option target="SwordOffer_mac"/>
+		</Unit>
 		<Unit filename="/Users/cff/Desktop/PROGRAM/SwordOffer_mac/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

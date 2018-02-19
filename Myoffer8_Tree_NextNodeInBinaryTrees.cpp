@@ -15,7 +15,7 @@ struct TreeLinkNode {
     struct TreeLinkNode *left;
     struct TreeLinkNode *right;
     struct TreeLinkNode *parent;  //指向父亲节点！（牛客上为next）
-    TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) {
+    TreeLinkNode(int x) :val(x), left(NULL), right(NULL), parent(NULL) {
 
     }
 };
