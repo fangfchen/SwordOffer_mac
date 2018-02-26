@@ -21,6 +21,6 @@ set(SOURCE_FILES List.cpp List.h
         Myoffer7_Tree_ConstructBinaryTree.cpp
         Myoffer8_Tree_NextNodeInBinaryTrees.cpp
         Myoffer9_queue_QueueWithTwoStacks.cpp
-        )
+        QuickSort.cpp)
 
 add_executable(SwordOffer_mac ${SOURCE_FILES})

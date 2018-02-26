@@ -5,7 +5,7 @@
 using namespace std;
 //==================================================================
 // 《剑指Offer——名企面试官精讲典型编程题》代码
-// 题目：输入一个链表，输出该链表中倒数第k个结点。为了符合大多数人的习惯，
+// 题目22：输入一个链表，输出该链表中倒数第k个结点。为了符合大多数人的习惯，
 // 本题从1开始计数，即链表的尾结点是倒数第1个结点。例如一个链表有6个结点，
 // 从头结点开始它们的值依次是1、2、3、4、5、6。这个链表的倒数第3个结点是
 // 值为4的结点。
@@ -43,7 +43,7 @@ public:
 		return s.top();
 	}
 	/***--------------------------------------------------------------
-	思路2【书】：用两个指针p1和p2，p1遍历到第k个时p2开始遍历，当p1指向尾节点时p2指向倒数第k个。
+	思路2【书】：用两个指针p1和p2，p1遍历到第k个(先走k-1步)时p2开始遍历，当p1指向尾节点时p2指向倒数第k个。
 	(注意：k<1和k>n的情况！)
 	--------------------------------------------------------------***/
 	ListNode* FindKthToTail2(ListNode* pListHead, unsigned int k) {
@@ -51,14 +51,28 @@ public:
 			return nullptr;
 		ListNode* p1 = pListHead;
 		ListNode* p2 = pListHead;
-		int i = 0;
-		while (p1!=nullptr) {
-			i++;
-			p1 = p1->next;
-			if (i > k) p2 = p2->next;
+
+		for(int i=0;i<k-1;i++){
+			if(p1->next!=nullptr)    //防止k>n
+				p1 = p1->next;
+			else
+				return nullptr;
 		}
-		if (k > i) return nullptr;
+		while(p1->next!=nullptr){
+			p1=p1->next;
+			p2=p2->next;
+		}
 		return p2;
+
+//		直接用while写：
+//		int i = 0;
+//		while (p1!=nullptr) {
+//			i++;
+//			p1 = p1->next;
+//			if (i > k) p2 = p2->next;
+//		}
+//		if (k > i) return nullptr;  //k>n
+//		return p2;
 	}
 
 	//============================test===============================

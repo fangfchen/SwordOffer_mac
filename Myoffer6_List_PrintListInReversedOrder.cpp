@@ -40,7 +40,8 @@ public:
 			pnode = pnode->next; //记得继续往下指啊！！（老忘记！！）
 		}
 		while (!s.empty()) {
-			v.push_back(s.top());
+            int temp = s.top();
+			v.push_back(temp);
 			s.pop();
 		}
 		return(v);
@@ -48,6 +49,7 @@ public:
 
 /***--------------------------------------------------------------
 思路2：利用递归的“压栈”性质。
+注：如果链表太长可能会"栈溢出"。
 --------------------------------------------------------------***/
 	void reverse_order_recursive(ListNode* pnode, vector<int>& v) {
 		if (pnode->next != nullptr) {
@@ -114,7 +116,6 @@ public:
 		test3();
 	}
 };
-
 //int main() {
 //    Solution6 s;
 //    s.run();

@@ -22,12 +22,14 @@ public:
 	/***--------------------------------------------------------------
 	思路1【书】：定义3个指针：p1,p2,pnext分别依次指向连续的3个节点（即p2=p1->next;pnext=p2->next），每次先取出p2->next存在pnext中，再把p2->next改为p1。
 	依次往后重复这个操作，直到p2为nullptr为止。
-	(注意：1个节点/2个节点的情况！)
+	(注意：
+	 1个节点的情况;
+	 别忘了令pHead->next=nullptr)
 	--------------------------------------------------------------***/
 	ListNode* ReverseList1(ListNode* pHead) {
 		if (pHead == nullptr) return nullptr;     //空链表
 		if (pHead->next == nullptr) return pHead; //单节点链表
-		ListNode* p1=pHead;
+		ListNode* p1 = pHead;
 		ListNode* p2 = pHead->next;
 		pHead->next = nullptr; //令头结点下一个为nullptr（因为反转后为尾节点）
 		while (p2 != nullptr) {
